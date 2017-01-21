@@ -18,18 +18,17 @@ int main(void){
 	// used for the if statement to check the input is an integer
     float b;
 
+	puts("Enter first integer");    // request to enter an integer
+	scanf("%f", &b);					// retrieve the number as a float
+	integer1=(int) b;					// cast the input number to integer and assign the value to integer1
 
+	if(integer1==b){					// if the values are the same, the input is an integer
+		puts("Enter second integer");	// request to enter the second integer
+		scanf("%f", &b);					// retrieve the number as a float
+		integer2=(int) b;					// cast the input number to integer and assign the value to integer2
 
+		if(integer2==b){					// if the values are the same, the input is an integer
 
-	printf("Enter first integer\n");    // request to enter an integer
-	scanf("%f", &b);				// retrieve the integer
-	integer1=(int) b;
-	if(integer1==b){
-		b=0;
-		printf("Enter second integer\n");	// request to enter the second integer
-		scanf("%f", &b);				// retrieve the second integer
-		integer2=(int) b;
-		if(integer1==b){
 			sum = integer1 + integer2;			// perfom the addition and print the result
 			printf("Sum is %d\n", sum);			
 
@@ -39,7 +38,7 @@ int main(void){
 			difference = integer1 - integer2;	// perform the subtraction and print the result
 			printf("Difference is %d\n", difference);
 	
-		// check if the second integer is different from 0 perform and print division and modulus
+			// check if the second integer is different from 0 perform and print division and modulus
 			if(integer2 != 0){					
 				quotient = integer1 / integer2;
 				printf("Quotient is %d\n", quotient);
@@ -47,20 +46,21 @@ int main(void){
 				remainder = integer1%integer2;
 				printf("Remainder is %d\n", remainder);
 			}
-		// if the second integer is 0, print an error message
+
+			// if the second integer is 0, print an error message
 			else {
-				printf("I cannot perform the quotient and remainder on 0\n");
+				puts("I cannot perform the quotient and remainder on 0");
 			}
 		}
-			// closing the if checking for the 2nd number
+		// closing the if checking for the 2nd number
 		else{
-			printf("The number inserted is not an integer. Exiting.. \n");
+			puts("The number inserted is not an integer. Exiting..");
 		}	
 
 	}
 	// closing the if checking for the 1st number
 	else{
-		printf("The number inserted is not an integer. Exiting.. \n");
+		puts("The number inserted is not an integer. Exiting..");
 	}
 	return 0;
 }
