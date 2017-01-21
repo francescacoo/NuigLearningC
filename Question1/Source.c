@@ -3,11 +3,10 @@ Write a program that asks the user to enter two numbers, obtains them from the u
 product, difference, quotient, and remainder.
 */
 
-
+// including the standard input output functions header
 #include <stdio.h>
 
-int main(void)
-{
+int main(void){
 	// declare and initialize the variables as integers
 	int integer1;
 	int integer2;
