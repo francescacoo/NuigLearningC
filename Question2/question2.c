@@ -9,10 +9,6 @@ Perform each of these calculations inside the printf statement(s) and use the co
 int main( void)
 {
 	float radius;
-	float diameter;
-	float circumference;
-	float area;
-
 
 	printf("Enter the radius\n");
 	scanf("%f", &radius);
