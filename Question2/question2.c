@@ -3,13 +3,12 @@ Use the constant value 3.14159 for .
 Perform each of these calculations inside the printf statement(s) and use the conversion specifier %f.
 */
 
-// including the standard input output functions
+// including the standard input output functions header
 #include <stdio.h>
 // including the value for PI in the preprocessor directive
 #define PI 3.14159
 
-int main( void)
-{
+int main( void){
 	//declare and initialize the variable radius as float
 	float radius;
 	// request to enter the value of the radius
