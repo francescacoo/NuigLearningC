@@ -21,21 +21,23 @@ Enter sales in dollars (-1 to end): -1
 // including the value for PI in the preprocessor directive
 #define FIXED_AMOUNT 200
 // number of employees
-#define TOT_EMPLOYEES 10
+
 
 int main(void) {
 	//declare and initialize the variable radius as float
 	float tot_sales;
 	// start the cycle if to print all the employees figures
-	int i = 0;
-	while(i <= TOT_EMPLOYEES){
-	puts("Enter sales in dollars (1 to end): ");
+
+	tot_sales = 0;
+	do{
+	puts("Enter sales in dollars (-1 to end): ");
 	// retrieve the value as float
 	scanf("%f", &tot_sales);
+	if(tot_sales!=-1){
 	float salary = FIXED_AMOUNT + (tot_sales / 100) * 9;
 	// perform and print the result of the calculations
 	printf("Salary is: $%.2f\n", salary);
-	i++;
 	}
+	} while ((tot_sales != -1));
 	return 0;
 }
