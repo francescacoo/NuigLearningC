@@ -6,7 +6,7 @@ int main(void) {
 	int number=0;
 	int largest=0;
 	
-	while(counter <= 10){
+	while(counter < 10){
 		printf("%s", "Enter the number of units sold: ");
 		scanf("%d", &number);
 		
