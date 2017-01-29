@@ -55,7 +55,7 @@ int main(void) {
 
 		// increment the counter
 		counter++;
-		}
+	}
 
 	// print the largest number found
 	printf("\nThe largest number is: %d \n", largest);
