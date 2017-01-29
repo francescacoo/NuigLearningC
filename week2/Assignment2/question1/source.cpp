@@ -23,19 +23,26 @@ Enter sales in dollars (-1 to end): -1
 
 int main(void) {
 	//declare and initialize the variable tot sales
-	float tot_sales;
+	float tot_sales =0.0;
 
-	puts("Enter sales in dollars (-1 to end): ");
+	// request to enter the sales
+	printf("%s","Enter sales in dollars (-1 to end): $ ");
 	// retrieve the value as float
 	scanf("%f", &tot_sales);
+	
+	// loop until sentinel value is entered
 	while (tot_sales != -1) {
 
-	float salary = 200 + (tot_sales / 100) * 9;
-	// perform and print the result of the calculations
-	printf("Salary is: $%.2f\n", salary);
-	puts("Enter sales in dollars (-1 to end): ");
-	// retrieve the value as float
-	scanf("%f", &tot_sales);
+		// calculate the salary based on the value of sales entered
+		float salary = 200 + (tot_sales / 100) * 9;
+
+		// print the result of the calculations
+		printf("Salary is: $ %.2f\n", salary);
+	
+		// request to enter the sales
+		printf("%s","Enter sales in dollars (-1 to end): $ ");
+		// retrieve the value as float
+		scanf("%f", &tot_sales);
 	}
 	 
 	return 0;
