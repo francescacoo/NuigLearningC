@@ -35,10 +35,13 @@ print "the largest number is" and the value of variable largest
 
 
 int main(void) {
+
+	// declare and initialise the variables
 	int counter = 1;
 	int number=0;
 	int largest=0;
 	
+	// print the instructions
 	puts("Enter the number of units sold");
 
 	//loop to insert and check 10 numbers
@@ -59,7 +62,6 @@ int main(void) {
 
 	// print the largest number found
 	printf("\nThe largest number is: %d \n", largest);
-
 
 	return 0;
 }

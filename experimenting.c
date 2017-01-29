@@ -2,6 +2,17 @@
 
 int main(void)
 {
-	printf("Hello! This is a test program\n \a");
-	return 0;
+int a;
+    float b;
+    scanf("%f",&b); 
+    a = (int) b;
+if(a==b)
+    {
+         printf("OKK");
+    }
+else
+{
+		printf("nope");
+}
+return 0;
 }
