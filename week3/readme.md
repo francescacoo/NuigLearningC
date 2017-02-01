@@ -1,1 +1,1 @@
-The file exercise1.c contains an example of a nested loop using two while loops.
+Exercises on loops (for, switch, while)
