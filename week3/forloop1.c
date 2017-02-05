@@ -1,3 +1,5 @@
+// print number to 100
+
 #include <stdio.h>
 
 int main(void) {
