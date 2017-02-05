@@ -1,8 +1,15 @@
+/*
+One interesting application of computers is drawing graphs and bar charts (sometimes called ?histograms?). 
+Write a program that first reads and stores five numbers (each between 1 and 30). 
+Then, for each number read, your program should print a line containing that number of adjacent asterisks 
+(e.g. for the number seven, it should print *******), so that it displays five rows of asterisks.
+*/
+
 #include <stdio.h>
 
 int main(void)
 {
-	// declare the variables needed to hold the 5 numbers and the temp numbers
+	// declare the variables needed to hold the 5 numbers and the temp number
 	int counter=1; 
 	int number;
 	int number1=0;
