@@ -55,7 +55,7 @@ unsigned long long int recursiveFactorial(int n){
 
 unsigned long long int loopFactorial(int n){
   int c;
-  long fact = 1;
+  unsigned long long fact = 1;
   for (c = 1; c <= n; c++)
     fact = fact * c;
 
