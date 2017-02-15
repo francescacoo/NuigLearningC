@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include "listPeakWindSpeed.h"
+#include <time.h>
 
 void bubblesort();
 void insertionsort();
 
 int main(void){
-
-//  bubblesort();
+bubblesort();
 insertionsort();
 
   return 0;
@@ -15,9 +15,11 @@ insertionsort();
 
 void insertionsort(){
 
+  FILE *insertion=fopen("insertion.txt","wb");
+
   int n, c, d;
 float t;
- 
+ clock_t start = clock(); 
   for (c = 1 ; c <= SIZE - 1; c++) {
     d = c;
  
@@ -30,24 +32,38 @@ float t;
     }
   }
  
-  printf("Sorted list in ascending order:\n");
+ // printf("Sorted list in ascending order:\n");
  
-  for (c = 0; c <= SIZE - 1; c++) {
-    printf("%f\n", listPeakWindSpeed[c]);
-  }
+ // for (c = 0; c <= SIZE - 1; c++) {
+//    printf("%f\n", listPeakWindSpeed[c]);
+  //}
 
+  for (c = 0; c <= SIZE - 1; c++) {
+fprintf(insertion,"%f\n",listPeakWindSpeed[c]);
+}
+fclose(insertion);
+
+   clock_t end = clock();  
+
+   printf("Time taken insertion: %f\n", (double) (start - end) / CLOCKS_PER_SEC);
 }
 
+
+
+
+
+
   void bubblesort(){
+      FILE *bubblesort=fopen("bubblesort.txt","wb");
   int pass; // passes counter
   int i; //comparison counter
   float hold; //temporary location used to swap array elements
  
-
+clock_t start = clock(); 
  
-  for (i = 0; i < SIZE; i++){
-    printf("%f",listPeakWindSpeed[i]);
-  }
+ // for (i = 0; i < SIZE; i++){
+ //   printf("%f",listPeakWindSpeed[i]);
+ // }
 
 
 //bubble sort
@@ -68,6 +84,11 @@ float t;
   printf("Sorted list in ascending order:\n");
  
   for ( i = 0 ; i < SIZE ; i++ ){
-     printf("%f", listPeakWindSpeed[i]);
+  //   printf("%f", listPeakWindSpeed[i]);
+     fprintf(bubblesort,"%f\n",listPeakWindSpeed[i]);
    }
+
+   clock_t end = clock();  
+
+   printf("Time taken bubblesort: %f\n", (double) (start - end) / CLOCKS_PER_SEC);
    }
