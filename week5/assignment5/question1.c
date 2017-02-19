@@ -12,11 +12,11 @@ int main(void){
   float listPeakWindSpeedInsertion[ SIZE ];
 
   for(int i=0; i<SIZE; i++){
-    listPeakWindSpeedBubble[i]=listPeakWindSpeed[i];
+    listPeakWindSpeedBubble[i]=listPeakWindSpeed[i]; //copy the items to the array
   }
 
   for(int i=0; i<SIZE; i++){
-    listPeakWindSpeedInsertion[i]=listPeakWindSpeed[i];
+    listPeakWindSpeedInsertion[i]=listPeakWindSpeed[i];//copy the items to the array
   }
 
   // call the bubblesort function passing the unsorted array
@@ -29,6 +29,8 @@ int main(void){
 }
 
   void bubblesort(float listPeakWindSpeedBubble[SIZE]){
+
+
       FILE *bubblesort=fopen("bubblesort.txt","wb");
       int pass; // passes counter
       int i; //comparison counter
@@ -70,38 +72,42 @@ int main(void){
 
 void insertionsort(float listPeakWindSpeedInsertion[SIZE]){
 
-  FILE *insertion=fopen("insertion.txt","wb");
+
 
  
-  clock_t start = clock(); 
-
+  clock_t start = clock(); // number of ticks when the function starts
+  FILE *insertion=fopen("insertion.txt","wb");
 
   int j;
   int comp=0; //number of comparisons
   int no_swap=0; // number of swaps
-  float temp; // 
+  float temp; // to keep the temporary value 
   int i,n;
   int c;
   
    // loop through all numbers 
   for (i = 1; i < SIZE; i++) {
-     j = i;
-     comp++;
-     while ((j > 0) && (listPeakWindSpeedInsertion[j - 1] > listPeakWindSpeedInsertion[j])) {
-           if(listPeakWindSpeedInsertion[j-1]>listPeakWindSpeedInsertion[j]){
-           comp++;
-        }
-        temp = listPeakWindSpeedInsertion[j - 1];
-        listPeakWindSpeedInsertion[j - 1] = listPeakWindSpeedInsertion[j];
-        listPeakWindSpeedInsertion[j] = temp;
-        j--;
 
-        no_swap++;//increment swap variable when actually swap is done
-    }
+    temp=listPeakWindSpeedInsertion[i]; // place the current value in the temp 
+    j=i;
+
+     comp++; // increse the comparison counter
+     while ((j > 0) && (listPeakWindSpeedInsertion[j - 1] >= temp)) { //it will run until the number has found its spot
+        comp++; // increse the comparison counter
+
+        
+        listPeakWindSpeedInsertion[j]= listPeakWindSpeedInsertion[j - 1];        // swap the elements
+        j--;// decrease the index if the array
+        }
+
+        listPeakWindSpeedInsertion[j] = temp; // insert the value
+
+        no_swap++;//increment swap counter
+
 }
  
   for (c = 0; c <= SIZE - 1; c++) {
-    fprintf(insertion,"%f\n",listPeakWindSpeedInsertion[c]);
+    fprintf(insertion,"%f\n",listPeakWindSpeedInsertion[c]); 
   }
   fclose(insertion);
 
@@ -109,3 +115,4 @@ void insertionsort(float listPeakWindSpeedInsertion[SIZE]){
 
   printf("Time taken insertion: %f\nNumber of swaps:%d, Number of comparisons:%d\n", (double) (start - end) / CLOCKS_PER_SEC,comp,no_swap);
 }
+

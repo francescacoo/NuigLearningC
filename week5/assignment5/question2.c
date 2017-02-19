@@ -81,6 +81,7 @@ printf("\n");
 // insertion sort function 
 void insertionsort(float listPeakWindSpeedInsertion[SIZE]){
 
+
   int j;
   int comp=0; //number of comparisons
   int no_swap=0; // number of swaps
@@ -90,20 +91,25 @@ void insertionsort(float listPeakWindSpeedInsertion[SIZE]){
   
    // loop through all numbers 
   for (i = 1; i < SIZE; i++) {
-     j = i;
-     comp++;
-     while ((j > 0) && (listPeakWindSpeedInsertion[j - 1] > listPeakWindSpeedInsertion[j])) {
-           if(listPeakWindSpeedInsertion[j-1]>listPeakWindSpeedInsertion[j]){
-           comp++; // increse the comparison counter
-        }
-        temp = listPeakWindSpeedInsertion[j - 1];
-        listPeakWindSpeedInsertion[j - 1] = listPeakWindSpeedInsertion[j];
-        listPeakWindSpeedInsertion[j] = temp;
-        j--;
 
-        no_swap++;//increment swap variable when actually swap is done
-    }
+    temp=listPeakWindSpeedInsertion[i]; // place the current value in the temp 
+    j=i;
+
+     comp++; // increse the comparison counter
+     while ((j > 0) && (listPeakWindSpeedInsertion[j - 1] >= temp)) { //it will run until the number has found its spot
+        comp++; // increse the comparison counter
+        // swap the elements
+        
+        listPeakWindSpeedInsertion[j]= listPeakWindSpeedInsertion[j - 1];
+        j--;// decrease the index if the array
+        }
+
+        listPeakWindSpeedInsertion[j] = temp;
+     
+
+        no_swap++;//increment swap counter
+
 }
- 
+
  
 }
