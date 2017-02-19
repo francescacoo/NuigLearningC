@@ -18,90 +18,90 @@ int main(void){
 
 
 // create the unsorted arrays to pass to the function
-  float listPeakWindSpeedInsertion[ SIZE ];
+  	float listPeakWindSpeedInsertion[ SIZE ];
 
 
-  for(int i=0; i<SIZE; i++){
-    listPeakWindSpeedInsertion[i]=listPeakWindSpeed[i];
-  }
+  	for(int i=0; i<SIZE; i++){
+    	listPeakWindSpeedInsertion[i]=listPeakWindSpeed[i];
+  	}
 
-  // call the insertion sort function passing the unsorted array to find the min and max values
-  insertionsort(listPeakWindSpeedInsertion);
+ 	 // call the insertion sort function passing the unsorted array to find the min and max values
+  	insertionsort(listPeakWindSpeedInsertion);
 
 
-printf("Minimum value:%f\nMax value:%f\n",listPeakWindSpeedInsertion[0],listPeakWindSpeedInsertion[SIZE-1]);
+	printf("Minimum value:%f\nMax value:%f\n",listPeakWindSpeedInsertion[0],listPeakWindSpeedInsertion[SIZE-1]);
 
-maxValue=listPeakWindSpeedInsertion[SIZE-1]; // the max value is the last in the array
+	maxValue=listPeakWindSpeedInsertion[SIZE-1]; // the max value is the last in the array
 // calculate the 5 bins - I calculate the boundaries at 20% - 40% - 60% - 80% and 100% of the maxValue 
 
-float bin1limit=maxValue*0.2;
-float bin2limit=maxValue*0.4;
-float bin3limit=maxValue*0.6;
-float bin4limit=maxValue*0.8;
+	float bin1limit=maxValue*0.2;
+	float bin2limit=maxValue*0.4;
+	float bin3limit=maxValue*0.6;
+	float bin4limit=maxValue*0.8;
 
-for(int i=0;i<SIZE;i++){
+	for(int i=0;i<SIZE;i++){
 
-	if(listPeakWindSpeed[i]>bin4limit){
-		bincounter[5]++;
-	}
-	else if(listPeakWindSpeed[i]>bin3limit){
-		bincounter[4]++;
-	
-	}
-	else if(listPeakWindSpeed[i]>bin2limit){
-		bincounter[3]++;
+		if(listPeakWindSpeed[i]>bin4limit){
+			bincounter[5]++;
 		}
-	else if(listPeakWindSpeed[i]>bin1limit){
-		bincounter[2]++;
+		else if(listPeakWindSpeed[i]>bin3limit){
+			bincounter[4]++;
+	
+		}
+		else if(listPeakWindSpeed[i]>bin2limit){
+			bincounter[3]++;
+		}
+		else if(listPeakWindSpeed[i]>bin1limit){
+			bincounter[2]++;
+		}
+
+		else{
+			bincounter[1]++;
+		}//close the for cycle
 	}
 
-	else{
-		bincounter[1]++;
-	}//close the for cycle
-}
-
-// cycle the 5 bin
-for(int x=1;x<6;x++){
+	// cycle the 5 bin
+	for(int x=1;x<6;x++){
 	//print the number of the bin and the n of occurrences
-	printf("\nBin n. %d: %03d ", x, bincounter[x]);
+		printf("\nBin n. %d: %03d ", x, bincounter[x]);
 
 	// cycle through the counters, every 10 print a * to create the histogram
-	for(int a=0;a<bincounter[x];a++){
+		for(int a=0;a<bincounter[x];a++){
 
-		if(a%10==0){
-		printf("*");
+			if(a%10==0){
+				printf("*");
+			}
 		}
 	}
-}
-printf("\n");
-  return 0;
+	printf("\n");
+  	return 0;
 
-}
+	}
 
 // insertion sort function 
 void insertionsort(float listPeakWindSpeedInsertion[SIZE]){
 
 
-  int j;
-  int comp=0; //number of comparisons
-  int no_swap=0; // number of swaps
-  float temp; // to keep the temporary value 
-  int i,n;
-  int c;
+	int j;
+	int comp=0; //number of comparisons
+	int no_swap=0; // number of swaps
+	float temp; // to keep the temporary value 
+	int i,n;
+	int c;
   
    // loop through all numbers 
-  for (i = 1; i < SIZE; i++) {
+	for (i = 1; i < SIZE; i++) {
 
-    temp=listPeakWindSpeedInsertion[i]; // place the current value in the temp 
-    j=i;
+    	temp=listPeakWindSpeedInsertion[i]; // place the current value in the temp 
+    	j=i;
 
-     comp++; // increse the comparison counter
-     while ((j > 0) && (listPeakWindSpeedInsertion[j - 1] >= temp)) { //it will run until the number has found its spot
-        comp++; // increse the comparison counter
-        // swap the elements
+     	comp++; // increse the comparison counter
+     	while ((j > 0) && (listPeakWindSpeedInsertion[j - 1] >= temp)) { //it will run until the number has found its spot
+        	comp++; // increse the comparison counter
+        	// swap the elements
         
-        listPeakWindSpeedInsertion[j]= listPeakWindSpeedInsertion[j - 1];
-        j--;// decrease the index if the array
+        	listPeakWindSpeedInsertion[j]= listPeakWindSpeedInsertion[j - 1];
+        	j--;// decrease the index if the array
         }
 
         listPeakWindSpeedInsertion[j] = temp;
@@ -109,7 +109,6 @@ void insertionsort(float listPeakWindSpeedInsertion[SIZE]){
 
         no_swap++;//increment swap counter
 
-}
+	}
 
- 
 }
